@@ -1,0 +1,42 @@
+﻿<Window x:Class="Pénzváltó.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pénzváltó"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="200" Width="400">
+	<Grid Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<StackPanel Grid.Row="0" Margin="0,0,0,20">
+			<WrapPanel Margin="0,0,0,10">
+				<TextBlock Text="Valuta" VerticalAlignment="Center" Width="40"/>
+				<ComboBox x:Name="ValutaValasztas" Width="50">
+			<ComboBoxItem Content="EUR" Tag="400"/>
+			<ComboBoxItem Content="USD" Tag="330"/>
+			<ComboBoxItem Content="JPY" Tag="2"/> 
+
+		</ComboBox>
+				
+			</WrapPanel>
+			<WrapPanel>
+				<TextBlock Text="Összeg" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10"/>
+				<TextBox x:Name="beirhatoOsszeg"  Width="100" Height="Auto" Margin="10,0,0,10" TextChanged="beirhatoOsszeg_TextChanged"/>
+				<TextBlock Text="Eredmény" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="25,0,0,10"/>
+				<TextBox x:Name="Eredmeny" Width="100" Height="Auto" Margin="10,0,0,10" IsEnabled="False"/>
+			</WrapPanel>
+			<WrapPanel>
+				<CheckBox x:Name="ValtasFordito" Margin="0,0,0,10" Checked="ValtasFordito_Checked" Unchecked="ValtasFordito_Unchecked"/>
+				<TextBlock Text="Átváltás fordítva" Margin="10,0,0,10"/>
+
+			</WrapPanel>
+			<WrapPanel>
+				<Button Content="Törlés" Width="50" Height="20" Margin="0,0,0,10" Click="Button_Click"/>
+				<Button Content="Átváltás" Width="70" Height="20" Margin="10,0,0,10" Click="AtvaltasClick"/>
+			</WrapPanel>
+		</StackPanel>
+	</Grid>
+</Window>
