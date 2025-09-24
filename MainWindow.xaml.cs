@@ -108,7 +108,7 @@ namespace Pénzváltó
 					var ertek = double.Parse(beirhatoOsszeg.Text)!;
 
 					double atvaltottErtek = ertek / valuta;
-					Eredmeny.Text = $"{atvaltottErtek:F0}";
+					Eredmeny.Text = $"{atvaltottErtek}";
 
 
 
